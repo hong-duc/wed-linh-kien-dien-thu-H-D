@@ -1,0 +1,128 @@
+﻿<!--/.nav-collapse -->
+<section class="bar background-white no-mb">
+    <div class="container">
+
+        <div class="col-md-12">
+            <div class="heading text-center">
+                <h2>ĐANG KHUYẾN MÃI</h2>
+            </div>
+            <div class="row">
+
+                <div style="height: 450px">
+                    <div uib-carousel active="active" interval="2000" no-wrap="noWrapSlides">
+                        <div uib-slide ng-repeat="slide in products2 track by slide.ProductID" index="$index">
+                            <a href="javascripts:;" ng-click="goToDetail(slide.ProductID)" class="btn btn-template-main">
+
+                                <img width="400" height="450" ng-src="{{slide.PhotoPath}}" style="margin:auto;">
+                                <div class="carousel-caption">
+                                    <h4 style="color:yellow;">{{slide.ProductName}}</h4>
+                                    <p style="color:red;">Đang khuyến mãi</p>
+                                </div>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascripts:;" ng-click="addToCart({product: product, quantity: 1})" class="btn btn-template-main">
+
+                </a>
+
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="heading text-center">
+                <h2>TOP Sản phẩm mới</h2>
+            </div>
+
+            <p class="lead">
+                Những sản phẩm đang được hạ giá tại shop. <span class="accent">Xem chi tiết bên dưới!</span>
+            </p>
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6" ng-repeat="product in products | orderBy: 'product.UpdateDate': true | limitTo: 4">
+                    <div class="box-image-text blog">
+                        <div class="top">
+                            <div class="image" style="width:255px; height:180px;">
+                                <img ng-src="{{product.PhotoPath}}" alt="{{PhotoTitle}}" class="img-responsive" style="width:250px; height:175px;">
+                            </div>
+                            <div class="bg"></div>
+                            <div class="text">
+                                <p class="buttons">
+                                    <a href="javascripts:;" ng-click="goToDetail(product.ProductID)" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Xem thêm</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h4 style="height:75px;">
+                                <a href="javascripts:;" ng-click="goToDetail(product.ProductID)">{{product.ProductName}}</a>
+                            </h4>
+                            <p class="author-category">
+                                Giá: <a>{{product.UnitPrice | currency: 'VND ' : 0}}</a>
+                            </p>
+                            <p class="read-more">
+                                <a href="javascripts:;" ng-click="addToCart({product: product, quantity: 1})" class="btn btn-template-main">Thêm vào giỏ hàng</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="heading text-center">
+                <h2>Sản phẩm HOT</h2>
+            </div>
+
+            <p class="lead">
+                Những sản phẩm được khách hàng mua nhiều tại shop. <span class="accent">Xem chi tiết bên dưới!</span>
+            </p>
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6" dir-paginate="product in products | itemsPerPage:4">
+                    <div class="box-image-text blog">
+                        <div class="top">
+                            <div class="image" style="width:255px; height:180px;">
+                                <img ng-src="{{product.PhotoPath}}" alt="{{PhotoTitle}}" class="img-responsive" style="width:250px; height:175px;">
+                            </div>
+                            <div class="bg"></div>
+                            <div class="text">
+                                <p class="buttons">
+                                    <a href="javascripts:;" ng-click="goToDetail(product.ProductID)" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Xem thêm</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h4 style="height:75px;">
+                                <a href="javascripts:;" ng-click="goToDetail(product.ProductID)">{{product.ProductName}}</a>
+                            </h4>
+                            <p class="author-category">
+                                Giá: <a>{{product.UnitPrice | currency: 'VND ' : 0}}</a>
+                            </p>
+                            <p class="read-more">
+                                <a href="javascripts:;" ng-click="addToCart({product: product, quantity: 1})" class="btn btn-template-main">Thêm vào giỏ hàng</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="text-center">
+                <dir-pagination-controls></dir-pagination-controls>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.bar -->

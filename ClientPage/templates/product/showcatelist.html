@@ -1,0 +1,52 @@
+﻿<!--/.nav-collapse -->
+<section class="bar background-white no-mb">
+    <div class="container">
+
+        <div class="col-md-12">
+            <div class="heading text-center">
+                <h2>Sản phẩm theo {{categoryName}}</h2>
+            </div>
+
+            <p class="lead">
+                Những sản phẩm được khách hàng mua nhiều tại shop. <span class="accent">Xem chi tiết bên dưới!</span>
+            </p>
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6" ng-repeat="product in products">
+                    <div class="box-image-text blog">
+                        <div class="top">
+                            <div class="image" style="width:255px; height:180px;">
+                                <img ng-src="{{product.PhotoPath}}" alt="{{PhotoTitle}}" class="img-responsive" style="width:250px; height:175px;">
+                            </div>
+                            <div class="bg"></div>
+                            <div class="text">
+                                <p class="buttons">
+                                    <a href="" ng-click="goToDetail(product.ProductID)" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Xem thêm</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h4><a href="" ng-click="goToDetail(product.ProductID)">{{product.ProductName}}</a></h4>
+                            <p class="author-category">
+                                Giá: <a>{{product.UnitPrice | currency: 'VND ' : 0}}</a>
+                            </p>
+                            <p class="read-more">
+                                <a href="#" class="btn btn-template-main">Thêm vào giỏ hàng</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- /.box-image-text -->
+
+                </div>
+
+            </div>
+            <!-- /.row -->
+            <!-- *** BLOG HOMEPAGE END *** -->
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+</section>
+<!-- /.bar -->

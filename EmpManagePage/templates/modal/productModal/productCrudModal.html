@@ -1,0 +1,131 @@
+﻿<div class="modal-demo">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Nhà cung cấp: {{ProductName}}</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+
+        <!--Form chỉnh sửa sản phẩm-->
+        <form class="form-horizontal">
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Tên sản phẩm</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-model="ProductName" id="ProductName" class="form-control" autofocus />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Loại sản phẩm</label>
+                <div class="col-sm-10">
+                    <label for="CategoryID">---Chọn loại sản phẩm---</label>
+                    <select class="form-control" id="CategoryID" ng-model="CategoryID" ng-options="cate.CategoryID as cate.CategoryName for cate in cates"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Nhà cung cấp</label>
+                <div class="col-sm-10">
+                    <label for="SupplierID">---Chọn nhà cung cấp---</label>
+                    <select class="form-control" id="SupplierID" ng-model="SupplierID" ng-options="supp.SupplierID as supp.CompanyName for supp in supps"></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Số lượng</label>
+                <div class="col-sm-10">
+                    <input type="number" string-to-number ng-model="Storage" id="Storage" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Đơn giá</label>
+                <div class="col-sm-10">
+                    <input type="number" string-to-number ng-model="UnitPrice" id="UnitPrice" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Mô tả</label>
+                <div class="col-sm-10">
+                    <div text-angular ng-model="Description" id="Description" placeholder="Nhập mô tả..."></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Ảnh</label>
+                <div class="col-sm-10">
+                    <img width="70" height="50" ng-src="{{PhotoPath}}" alt="PhotoTitle" />
+                    <!--Upload Files-->
+                    <div flow-init>
+                        <!--<input type="file" flow-btn />-->
+                        <!--Input OR Other element as upload button-->
+                        <span class="btn" flow-btn><i class="fa fa-file"></i>Choose Files</span>
+                        <img flow-img="$flow.files[0]" width="70" height="70" />
+                        <a class="btn btn-sm btn-success" ng-click="uploadFile($flow)">Upload</a>
+                        <div ng-repeat="file in $flow.files" class="transfer-box">
+                            <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
+                                <p ng-model="file">{{file.name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Bảo hành</label>
+                <div class="col-sm-10">
+                    <input type="number" string-to-number ng-model="Warranty" id="Warranty" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Sức chứa</label>
+                <div class="col-sm-10">
+                    <input type="number" string-to-number ng-model="Capacity" id="Capacity" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Cổng kết nối</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-model="ConnectPort" id="ConnectPort" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Tốc độ ghi</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-model="WriteSpeed" id="WriteSpeed" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Tốc độ đọc</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-model="ReadSpeed" id="ReadSpeed" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Hỗ trợ hệ điều hành</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-model="SupportOS" id="SupportOS" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Khuyến mãi</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" ng-model="IsDiscount" id="IsDiscount" class="form-control" />
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="editProd()">Cập nhật</button>
+        <button class="btn btn-danger" type="button" ng-click="deleteProd()">Xóa</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Hủy</button>
+    </div>
+</div>

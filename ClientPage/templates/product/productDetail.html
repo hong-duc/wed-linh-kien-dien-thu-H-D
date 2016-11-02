@@ -1,0 +1,84 @@
+﻿<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>CHI TIẾT SẢN PHẨM</h1>
+            </div>
+            <div class="col-md-5">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#/">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="">Sản phẩm</a>
+                    </li>
+                    <li>Chi tiết sản phẩm</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h2>THÔNG TIN SẢN PHẨM</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row portfolio-project">
+
+            <section>
+
+                <div class="col-sm-4">
+                        <div class="item">
+                            <img ng-src="{{PhotoPath}}" alt="{{PhotoTitle}}" class="img-responsive" />
+                        </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="project-more">
+                        <h4>Tên sản phẩm: </h4><p>{{ProductName}}</p>
+                        <h4>Giá bán: </h4><p>{{UnitPrice | currency: 'VND ' : 0}}</p>
+                        <h4>Cổng kết nối: </h4><p>{{ConnectPort}}</p>
+                        <h4>Bảo hành: </h4><p>{{Warranty}} năm</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="project-more">
+                        <h4>Dung lượng: </h4><p>{{Capacity}} GB</p>
+                        <h4>Tốc độ đọc: </h4><p>{{ReadSpeed}} MB/s</p>
+                        <h4>Tốc độ ghi: </h4><p>{{WriteSpeed}} MB/s</p>
+                        <h4>HĐH hỗ trợ: </h4><p>{{SupportOS}}</p>
+                    </div>
+                    <button ng-click="addToCart()" class="btn btn-success">Thêm vào giỏ hàng</button>
+                </div>               
+
+            </section>
+
+            <section>
+
+                <div class="col-sm-12">
+
+                    <div class="heading">
+                        <h3>MÔ TẢ</h3>
+                    </div>
+
+                    <div ta-bind ng-model="Description"></div>
+
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+
+</div>
+<!-- /#content -->

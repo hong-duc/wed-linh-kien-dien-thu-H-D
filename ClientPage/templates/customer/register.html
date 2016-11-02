@@ -1,0 +1,132 @@
+﻿<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>TẠO TÀI KHOẢN / ĐĂNG KÝ</h1>
+            </div>
+            <div class="col-md-5">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#/">Trang chủ</a>
+                    </li>
+                    <li>TẠO TÀI KHOẢN / ĐĂNG KÝ</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="box">
+                    <h2 class="text-uppercase">TẠO TÀI KHOẢN</h2>
+
+                    <p class="lead">Bạn chưa có tài khoản để mua hàng?</p>
+                    <p>Vui lòng nhập thông tin cần thiết để đăng ký tài khoản!</p>
+                    <p class="text-muted">Nếu bạn có thắc mắc, vui lòng <a href="contact.html">liên hệ chúng tôi</a>.</p>
+
+                    <hr>
+
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="Username">Tên đăng nhập</label>
+                                    <input type="email" class="form-control" data-ng-model="Username" id="Username" required autofocus>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="Password">Mật khẩu</label>
+                                    <input type="password" class="form-control" data-ng-model="Password" id="Password" required>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="LastName">Họ</label>
+                                    <input type="text" class="form-control" data-ng-model="LastName" id="LastName">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="FirstName">Tên</label>
+                                    <input type="text" class="form-control" data-ng-model="FirstName" id="FirstName">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="BirthDate">Ngày sinh</label>
+                                    <!--<input type="date" class="form-control" data-ng-model="BirthDate" id="BirthDate">-->
+                                    <datepicker date-format="dd-MM-yyyy" selector="form-control">
+                                        <div class="input-group">
+                                            <input class="form-control" ng-model="BirthDate" id="BirthDate" placeholder="Chọn ngày..." />
+                                            <span class="input-group-addon" style="cursor: pointer">
+                                                <i class="fa fa-lg fa-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </datepicker>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="Address">Địa chỉ</label>
+                                    <input type="text" class="form-control" data-ng-model="Address" id="Address">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="Phone">Số điện thoại</label>
+                                    <input type="number" string-to-number class="form-control" data-ng-model="Phone" id="Phone">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="PhotoPath">Ảnh đại diện</label>
+                                    <!--<input type="file" class="form-control" data-ng-model="PhotoPath" id="PhotoPath">-->
+                                    <!--Upload Files-->
+                                    <div flow-init>
+
+                                        <!--<input type="file" flow-btn />-->
+                                        <!--Input OR Other element as upload button-->
+                                        <span class="btn" flow-btn><i class="fa fa-file"></i>Choose Files</span>
+                                        <img flow-img="$flow.files[0]" width="70" height="70" />
+                                        <a class="btn btn-sm btn-success" ng-click="uploadFile($flow)">Upload</a>
+                                        <div ng-repeat="file in $flow.files" class="transfer-box">
+                                            <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
+                                                <p ng-model="file">{{file.name}}</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" ng-click="register()" class="btn btn-template-main"><i class="fa fa-user-md"></i> Đăng ký</button>
+                            </div>
+
+                        </div>                     
+                    </form>
+                </div>
+            </div>
+           
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#content -->

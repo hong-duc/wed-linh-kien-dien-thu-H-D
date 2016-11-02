@@ -1,0 +1,41 @@
+﻿<div class="row jumbotron">
+    <h1 class="text-center text-danger">Quản Lý Khách Hàng</h1>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-9 col-md-offset-1">
+            <!--Xóa khách hàng-->
+            <button class="btn btn-danger" ng-click="openCusToDelete()">Xóa khách hàng</button>
+            <!--Cập nhật thông tin khách hàng-->
+            <button class="btn btn-info" ng-click="openCusToEdit()">Cập nhật khách hàng</button>
+
+            <hr />
+            <!--Tìm kiếms-->
+            <input type="text" placeholder="Tìm kiếm..." class="input-lg form-control" ng-model="txtFilter" />
+            <br />
+            <br />
+            <!--Danh sách khách hàng-->
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Họ Tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Ngày Đăng ký</th>
+                        <th>Email</th>
+                        <th>Điện thoại</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cus in ctms | filter: txtFilter">
+                        <td>{{cus.LastName}} {{cus.FirstName}}</td>
+                        <td>{{cus.BirthDate | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{cus.RegDate | date:'dd/MM/yyyy - h:mma'}}</td>
+                        <td>{{cus.Username}}</td>
+                        <td>{{cus.Phone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,174 @@
+﻿<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>CẬP NHẬT THÔNG TIN</h1>
+            </div>
+            <div class="col-md-5">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#/">Trang chủ</a>
+                    </li>
+                    <li>CẬP NHẬT THÔNG TIN</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    <div class="container">
+
+        <div class="row">
+
+            <!-- *** LEFT COLUMN ***
+     _________________________________________________________ -->
+
+            <div class="col-md-9 clearfix" id="customer-account">
+
+                <p class="lead">Đổi mật khẩu hoặc cập nhật thông tin khách hàng ở đây.</p>
+                <p class="text-muted">Vui lòng đổi mật khẩu để nâng cao độ bảo mật tài khoản của bạn.</p>
+
+                <div class="box">
+
+                    <div class="heading">
+                        <h3 class="text-uppercase">ĐỔI MẬT KHẨU</h3>
+                    </div>
+
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="password_old">Mật khẩu cũ</label>
+                                    <input type="password" data-ng-model="password_old" class="form-control" id="password_old">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="password_1">Mật khẩu mới</label>
+                                    <input type="password" data-ng-model="password_1" class="form-control" id="password_1">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="password_2">Mời nhập lại mật khẩu mới</label>
+                                    <input type="password" data-ng-model="password_2" class="form-control" id="password_2">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="text-center">
+                            <button type="submit" ng-click="saveNewPassword()" class="btn btn-template-main"><i class="fa fa-save"></i> LƯU MẬT KHẨU MỚI</button>
+                        </div>
+                    </form>
+
+                </div>
+                <!-- /.box -->
+
+
+                <div class="box clearfix">
+                    <div class="heading">
+                        <h3 class="text-uppercase">THÔNG TIN CHI TIẾT KHÁCH HÀNG</h3>
+                    </div>
+
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="LastName">Họ</label>
+                                    <input type="text" data-ng-model="LastName" class="form-control" id="LastName">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="FirstName">Tên</label>
+                                    <input type="text" data-ng-model="FirstName" class="form-control" id="FirstName">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="Address">Địa chỉ</label>
+                                    <input type="text" data-ng-model="Address" class="form-control" id="Address">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="BirthDate">Ngày sinh</label>
+                                    <datepicker date-format="dd-MM-yyyy" selector="form-control">
+                                        <div class="input-group">
+                                            <input class="form-control" ng-model="BirthDate" id="BirthDate" placeholder="Chọn ngày..." />
+                                            <span class="input-group-addon" style="cursor: pointer">
+                                                <i class="fa fa-lg fa-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </datepicker>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.row -->
+
+                        <div class="row">
+                            
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="Phone">Điện thoại</label>
+                                    <input type="number" string-to-number data-ng-model="Phone" class="form-control" id="Phone">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-3">
+                                <div class="form-group">
+                                    <label>Ảnh đại diện</label>
+                                    <img width="70" height="50" ng-src="{{PhotoPath}}" alt="PhotoTitle" />
+                                    <!--Upload Files-->
+                                    <div flow-init>
+
+                                        <!--<input type="file" flow-btn />-->
+                                        <!--Input OR Other element as upload button-->
+                                        <span class="btn" flow-btn><i class="fa fa-file"></i>Choose Files</span>
+                                        <img flow-img="$flow.files[0]" width="70" height="70" />
+                                        <a class="btn btn-sm btn-success" ng-click="uploadFile($flow)">Tải lên</a>
+                                        <div ng-repeat="file in $flow.files" class="transfer-box">
+                                            <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
+                                                <p ng-model="file">{{file.name}}</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="col-sm-12 text-center">
+                                <button type="submit" ng-click="saveEditUser()" class="btn btn-template-main"><i class="fa fa-save"></i> LƯU THÔNG TIN</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+            <!-- /.col-md-9 -->
+            <!-- *** LEFT COLUMN END *** -->
+
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#content -->

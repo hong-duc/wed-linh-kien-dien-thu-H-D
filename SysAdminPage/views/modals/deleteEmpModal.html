@@ -1,0 +1,51 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Xóa nhân viên</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-1">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                    {{selectedItem}}
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li ng-repeat="a in emps">
+                        <a ng-click="dropboxitemselected(a)">{{a.LastName}} {{a.FirstName}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <form ng-enter="DeleteEmp()" ng-show="isDeleteItemVisible">
+                <div class="form-group">
+                    <label>Tên</label>
+                    <input type="text" ng-disabled="true" ng-model="FirstName" id="FirstName" class="form-control input-lg" placeholder="Tên" />
+                </div>
+                <div class="form-group">
+                    <label>Họ</label>
+                    <input type="text" ng-disabled="true" ng-model="LastName" id="LastName" class="form-control input-lg" placeholder="Họ" />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" ng-disabled="true" ng-model="Email" id="Email" class="form-control input-lg" placeholder="Email" />
+                </div>
+                <div class="form-group">
+                    <label>Ngày sinh</label>
+                    <input type="date" ng-disabled="true" ng-model="BirthDate | date: 'dd/MM/yyyy'" id="BirthDate" class="form-control input-lg" placeholder="Ngày sinh" />
+                </div>
+                <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <input type="text" ng-disabled="true" ng-model="Address" id="Address" class="form-control input-lg" placeholder="Email" />
+                </div>
+                <button ng-click="DeleteEmp()" class="btn btn-danger form-control input-lg">Xóa</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <!--<button class="btn btn-primary" type="button" ng-click="addEmp()">OK</button>-->
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Xong</button>
+</div>
+

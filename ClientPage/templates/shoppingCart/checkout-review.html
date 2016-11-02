@@ -1,0 +1,52 @@
+﻿<form ng-submit="placeOrder()">
+    <div class="content">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">Product</th>
+                        <th>Quantity</th>
+                        <th>Unit price</th>
+                        <!--<th>Discount</th>-->
+                        <th colspan="2">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="data in cart track by $index">
+                        <td>
+                            <img ng-src="{{data.product.PhotoPath}}" alt="{{data.product.PhotoTitle}}" />
+                        </td>
+                        <td>
+                            <a href="javascript:;" ng-click="goToDetail(data.product.ProductID)">{{data.product.ProductName}}</a>
+                        </td>
+                        <td>
+                            <input type="number" ng-model="data.quantity" class="form-control" max="10" min="1"  readonly/>
+                        </td>
+                        <td>{{data.product.UnitPrice | currency: 'VNĐ ' : 0}}</td>
+                        <td colspan="2">{{data.product.UnitPrice * data.quantity | currency: 'VNĐ ' : 0}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="5">Total</th>
+                        <th colspan="2">{{total | currency: 'VNĐ ' : 0}}</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <div class="box-footer">
+        <div class="pull-left">
+            <a ui-sref="checkout.payment" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to payment method</a>
+        </div>
+        <div class="pull-right">
+
+            <button type="submit" class="btn btn-template-main">
+                PLACE AN ORDER NOW!!<i class="fa fa-chevron-right"></i>
+            </button>
+
+        </div>
+    </div>
+</form>

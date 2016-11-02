@@ -1,0 +1,21 @@
+﻿<!-- MODAL -->
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-login-label">Chào mừng đến với trang quản lý</h3>
+    <p>Vui lòng nhập thông tin đăng nhập</p>
+</div>
+
+<div class="modal-body">
+
+    <form role="form" class="login-form">
+        <div class="form-group">
+            <label class="sr-only" for="Username">Tài khoản</label>
+            <input type="text" name="Username" ng-model="Username" placeholder="Tên đăng nhập..." class="form-username form-control" id="Username">
+        </div>
+        <div class="form-group">
+            <label class="sr-only" for="Password">Mật khẩu</label>
+            <input type="password" name="Password" ng-model="Password" placeholder="Mật khẩu..." class="form-password form-control" id="Password">
+        </div>
+        <button ng-click="login()" class="btn">Đăng nhập</button>
+    </form>
+
+</div>

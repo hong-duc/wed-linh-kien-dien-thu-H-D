@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>System Admin</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--Core CSS-->
+    <!--Bootstrap-->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <!--Angular DatePicker-->
+    <link href="css/angular-datepicker.min.css" rel="stylesheet" type="text/css"/>  
+    <!--Font Awesome-->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <!--Text AngularJS-->
+    <link href="css/textAngular.css" rel="stylesheet" type="text/css"/>
+    <!--Angular Loading Bar-->
+    <link href="css/loading-bar.css" rel="stylesheet" type="text/css" media="all"/>
+    <!--Angular Toastr-->
+    <link href="css/angular-toastr.min.css" rel="stylesheet" type="text/css"/>
+    <!--App Css-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+    <!--Core Javascript-->
+    <!--Jquery-->
+    <script type="text/javascript" src="scripts/libs/jquery-1.9.0.js"></script>
+    <!--Bootstrap-->
+    <script type="text/javascript" src="scripts/libs/bootstrap.js"></script>
+    <!--AngularJS-->
+    <script type="text/javascript" src="scripts/libs/angular.js"></script>
+    <!--Angular Animate-->
+    <script type="text/javascript" src="scripts/libs/angular-animate.min.js"></script>
+    <!--Angular Sanitize-->
+    <script type="text/javascript" src="scripts/libs/angular-sanitize.min.js"></script>
+    <!--Angular UI Router-->
+    <script type="text/javascript" src="scripts/libs/angular-ui-router.js"></script>
+    <!--Angulalr UI Bootstrap-->
+    <script type="text/javascript" src="scripts/libs/ui-bootstrap-tpls-2.1.4.js"></script>
+    <!--Angular DatePicker-->
+    <script type="text/javascript" src="scripts/libs/angular-datepicker.min.js"></script>
+    <!--Text AngularJS Randy-->
+    <script type="text/javascript" src="scripts/libs/textAngular-rangy.min.js"></script>
+    <!--Text AngularJS Sanitize-->
+    <script type="text/javascript" src="scripts/libs/textAngular-sanitize.min.js"></script>
+    <!--TextAngularJS-->
+    <script type="text/javascript" src="scripts/libs/textAngular.min.js"></script>
+    <!--Angular Loading Bar-->
+    <script type="text/javascript" src="scripts/libs/loading-bar.js"></script>
+    <!--Angular Toastr-->
+    <script type="text/javascript" src="scripts/libs/angular-toastr.min.js"></script>
+    <script type="text/javascript" src="scripts/libs/angular-toastr.tpls.min.js"></script>
+    <!--Angular Flow Standalone-->
+    <script src="scripts/libs/ng-flow-standalone.min.js"></script>
+    <!--FlowJS-->
+    <script src="scripts/libs/flow.min.js"></script>
+    <!--Angular FlowJS-->
+    <script src="scripts/libs/ng-flow.min.js"></script>
+
+    <!--Main App-->
+    <script type="text/javascript" src="scripts/app.js"></script>
+
+    <!--Services-->
+    <script type="text/javascript" src="scripts/services/employeesService.js"></script>
+    <script type="text/javascript" src="scripts/services/customerService.js"></script>
+
+    <!--Controllers-->
+    <script type="text/javascript" src="scripts/controllers/loginCtrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/customersCtrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/employeesCtrl.js"></script>
+
+    <!--Modal Controllers-->
+    <!--Empoyees Modal-->
+    <script type="text/javascript" src="scripts/controllers/modals/addEmpModalCtrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/modals/deleteEmpModalCtrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/modals/editEmpModalCtrl.js"></script>
+    <!--Customers Modal-->
+    <script type="text/javascript" src="scripts/controllers/modals/deleteCusModalCtrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/modals/editCusModalCtrl.js"></script>
+
+</head>
+<body ng-app="app">
+
+    <div class="container">
+        <nav role="navigation" class="nav navbar-inverse">
+            <ul class="nav navbar-nav">
+                <!--<li><a ui-sref="home">Home</a></li>-->
+                <li><a ui-sref="employees">Nhân viên</a></li>
+                <li><a ui-sref="customers">Khách hàng</a></li>
+            </ul>
+        </nav>
+
+        <!--Main Content-->
+        <ui-view></ui-view>
+
+    </div>
+
+</body>
+</html>

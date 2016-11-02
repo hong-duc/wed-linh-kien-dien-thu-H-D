@@ -1,0 +1,104 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Cập nhật thông tin nhân viên</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="row">
+
+        <!--Chọn nhân viên-->
+        <div class="col-md-3 col-md-offset-1">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                    {{selectedItem}}
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li ng-repeat="a in emps">
+                        <a ng-click="dropboxitemselected(a)">{{a.LastName}} {{a.FirstName}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Hồ sơ nhân viên-->
+        <div class="col-md-7">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{LastName}} {{FirstName}}</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 " align="center">
+                            <img alt="{{PhotoTitle}}" ng-src="{{PhotoPath}}" class="img-circle img-responsive">
+                            <!--<img src="http://localhost:64025/FileUploads/book1.jpg" />-->
+                        </div>
+                        <div class="col-md-9 col-lg-9">
+                            <!--Form cập nhật thông tin nhân viên-->
+                            <form ng-enter="EditEmp()" ng-show="isDeleteItemVisible">
+                                <div class="form-group">
+                                    <label>Tên đăng nhập</label>
+                                    <input type="text" ng-disabled="true" ng-model="Username" id="Username" class="form-control input-lg" placeholder="Tên đăng nhập" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Mật khẩu</label>
+                                    <input type="password" ng-disabled="true" ng-model="Password" id="Password" class="form-control input-lg" placeholder="Mật khẩu" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên</label>
+                                    <input type="text" ng-model="FirstName" id="FirstName" class="form-control input-lg" placeholder="Tên" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Họ</label>
+                                    <input type="text" ng-model="LastName" id="LastName" class="form-control input-lg" placeholder="Họ" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngày sinh</label>
+                                    <datepicker date-format="dd-MM-yyyy" selector="form-control">
+                                        <div class="input-group">
+                                            <input class="form-control" ng-model="BirthDate" id="BirthDate" placeholder="Chọn ngày..." />
+                                            <span class="input-group-addon" style="cursor: pointer">
+                                                <i class="fa fa-lg fa-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </datepicker>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngày thuê</label>
+                                    <datepicker date-format="dd-MM-yyyy" selector="form-control">
+                                        <div class="input-group">
+                                            <input class="form-control" ng-model="HireDate" id="HireDate" placeholder="Chọn ngày..." />
+                                            <span class="input-group-addon" style="cursor: pointer">
+                                                <i class="fa fa-lg fa-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </datepicker>
+                                </div>
+                                <div class="form-group">
+                                    <label>Địa chỉ</label>
+                                    <input type="text" ng-model="Address" id="Address" class="form-control input-lg" placeholder="Địa chỉ" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" ng-model="Email" id="Email" class="form-control input-lg" placeholder="Email" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Điện thoại</label>
+                                    <input type="number" string-to-number ng-model="Phone" id="Phone" class="form-control input-lg" placeholder="Điện thoại" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Ghi chú</label>
+                                    <input type="text" ng-model="Notes" id="Notes" class="form-control input-lg" placeholder="Ghi chú" />
+                                </div>
+                                <button ng-click="EditEmp()" class="btn btn-primary">Cập nhật</button>
+                            </form>
+                        </div>                       
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Xong</button>
+</div>
+

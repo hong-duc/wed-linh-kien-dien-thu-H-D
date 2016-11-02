@@ -1,0 +1,147 @@
+﻿<div id="heading-breadcrumbs" class="no-mb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>Liên hệ</h1>
+            </div>
+            <div class="col-md-5">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#/">Trang chủ</a>
+                    </li>
+                    <li>Liên hệ</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    <div class="container" id="contact">
+
+        <section>
+            <div class="row">
+                <div class="col-md-12">
+                    <ng-map center="[10.807316, 106.705044]">
+                        <marker position="10.807316, 106.705044" title="H & D Shop"></marker>
+                    </ng-map>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="row">
+                <div class="col-md-8">
+
+                    <div class="heading">
+                        <h2>Chúng tôi ở đây để giúp bạn</h2>
+                    </div>
+
+                    <p>Nếu có thắc mắc, vui lòng điền thông tin liên hệ theo thông tin bên dưới. Chúng tôi sẽ trả lời sớm nhất có thể.</p>
+
+                    <div class="heading">
+                        <h3>Thông tin liên hệ</h3>
+                    </div>
+
+                    <form>
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="LastName">Họ</label>
+                                    <input type="text" class="form-control" ng-model="LastName" id="LastName" autofocus>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="FistName">Tên</label>
+                                    <input type="text" class="form-control" ng-model="FistName" id="FistName">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="Phone">Điện thoại</label>
+                                    <input type="text" class="form-control" ng-model="Phone" id="Phone">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="Email">Email</label>
+                                    <input type="email" class="form-control" ng-model="Email" id="Email">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="Title">Chủ đề</label>
+                                    <input type="text" class="form-control" ng-model="Title" id="Title">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="Message">Nội dung</label>
+                                    <textarea id="Message" data-ng-model="Message" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 text-center">
+                                <button ng-click="sendFeedback()" class="btn btn-template-main"><i class="fa fa-envelope-o"></i> Gửi tin</button>
+
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </form>
+                </div>
+
+                <div class="col-md-4">
+
+
+                    <h3 class="text-uppercase">Địa chỉ</h3>
+
+                    <p>
+                        677 Bùi Đình Túy
+                        <br>Phường 12
+                        <br>Quận Bình Thạnh
+                        <br>Hồ Chí Minh
+                        <br>
+                        <strong>H & D Shop</strong>
+                    </p>
+
+                    <h3 class="text-uppercase">HOT LINE</h3>
+
+                    <p class="text-muted">Vui lòng nhắn tin trong giờ hành chính, nếu cần thiết có thể gọi khẩn cấp.</p>
+                    <p>
+                        <strong>+84 124 485 2154</strong>
+                    </p>
+
+
+
+                    <h3 class="text-uppercase">Trung tâm hỗ trợ</h3>
+
+                    <p class="text-muted">Vui lòng gửi email phản hồi cho chúng tôi hoặc email cá nhân.</p>
+                    <ul>
+                        <li>
+                            <strong><a href="#">mhn4work@gmail.com</a></strong>
+                        </li>
+                        <li>
+                            <strong><a href="#">hongduc_1994@yahoo.com</a></strong>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </div>
+    <!-- /#contact.container -->
+</div>
+<!-- /#content -->

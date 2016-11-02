@@ -1,0 +1,47 @@
+﻿<div class="row jumbotron">
+    <h1 class="text-center text-danger">Quản Lý Nhân Viên</h1>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-9 col-md-offset-1">
+            <!--Thêm nhân viên-->
+            <button type="button" class="btn btn-primary" ng-click="openEmpToAdd()" >Thêm nhân viên</button>
+            <!--Xóa nhân viên-->
+            <button class="btn btn-danger" ng-click="openEmpToDelete()">Xóa nhân viên</button>
+            <!--Cập nhật thông tin nhân viên-->
+            <button class="btn btn-info" ng-click="openEmpToEdit('lg')">Cập nhật nhân viên</button>
+
+            <hr />
+            <!--Tìm kiếms-->
+            <input type="text" placeholder="Tìm kiếm..." class="input-lg form-control" ng-model="txtFilter" />
+            <br />
+            <br />
+            <!--Danh sách nhân viên-->
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Họ Tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Ngày gia nhập</th>
+                        <th>Địa chỉ</th>
+                        <th>Email</th>
+                        <th>Điện thoại</th>
+                        <th>Ghi chú</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="emp in emps | filter: txtFilter">
+                        <td>{{emp.LastName}} {{emp.FirstName}}</td>
+                        <td>{{emp.BirthDate | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{emp.HireDate | date:'dd/MM/yyyy - h:mma'}}</td>
+                        <td>{{emp.Address}}</td>
+                        <td>{{emp.Email}}</td>
+                        <td>{{emp.Phone}}</td>
+                        <td>{{emp.Notes}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

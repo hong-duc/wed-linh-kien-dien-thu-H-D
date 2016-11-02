@@ -1,0 +1,58 @@
+﻿<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>ĐĂNG NHẬP</h1>
+            </div>
+            <div class="col-md-5">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#/">Trang chủ</a>
+                    </li>
+                    <li>ĐĂNG NHẬP</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="box">
+                    <h2 class="text-uppercase">Đăng nhập</h2>
+
+                    <p class="lead">Bạn đã tài khoản!</p>
+                    <p class="text-muted">
+                        Vui lòng nhập thông tin đăng nhập để mua hàng nào.
+                    </p>
+
+                    <hr>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="UsernameLogin">Tên đăng nhập</label>
+                            <input type="text" class="form-control" data-ng-model="cusLogin.Username" id="UsernameLogin" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="PasswordLogin">Mật khẩu</label>
+                            <input type="password" class="form-control" data-ng-model="cusLogin.Password" id="PasswordLogin">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" ng-click="login()" class="btn btn-template-main"><i class="fa fa-sign-in"></i> Đăng nhập</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#content -->

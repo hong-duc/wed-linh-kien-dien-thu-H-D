@@ -1,0 +1,150 @@
+﻿<!doctype html>
+<html lang="en" ng-app="RDash">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EmpMan Page</title>
+
+    <!-- STYLES -->
+    <!-- build:css lib/css/main.min.css -->
+    <!--bootstrap-->
+    <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <!--font-awesome-->
+    <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+    <!--rdash-->
+    <link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
+    <!--alerttify-->
+    <link type="text/css" href="components/alertify/themes/alertify.core.css" rel="stylesheet" />
+    <link type="text/css" href="components/alertify/themes/alertify.bootstrap.css" rel="stylesheet" />
+    <link type="text/css" href="components/alertify/themes/alertify.default.css" rel="stylesheet" />
+    <!--jquery dataTables-->
+    <link type="text/css" href="css/jquery.dataTables.min.css" rel="stylesheet" />
+    <!--angular dataTables-->
+    <link type="text/css" href="components/angular-datatables/dist/css/angular-datatables.min.css" rel="stylesheet" />
+    <!--angular toastr-->
+    <link type="text/css" href="components/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet" />
+    <!--text angular-->
+    <link type="text/css" href="components/textAngular/dist/textAngular.css" rel="stylesheet" />
+    <!--angular dialog-->
+    <link type="text/css" href="components/ng-dialog/css/ngDialog.min.css" rel="stylesheet" />
+    <link type="text/css" href="components/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet" />
+    <!-- endbuild -->
+
+    <!--style css-->
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
+
+    <!-- SCRIPTS -->
+    <!-- build:js lib/js/main.min.js -->
+    <!--jquery-->
+    <script type="text/javascript" src="components/jquery/dist/jquery.min.js"></script>
+    <!--jquery dataTables-->
+    <script type="text/javascript" src="components/jquery.dataTables.min.js"></script>
+    <!--bootstrap-->
+    <script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--angularjs-->
+    <script type="text/javascript" src="components/angular/angular.js"></script>
+    <!--angular dataTables-->
+    <script type="text/javascript" src="components/angular-datatables/dist/angular-datatables.min.js"></script>
+    <!--angular ui bootstrap-->
+    <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!--angular cookies-->
+    <script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
+    <!--angular ui router-->
+    <script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!--notify-->
+    <script type="text/javascript" src="components/notify.min.js"></script>
+    <!--alerttify-->
+    <script type="text/javascript" src="components/alertify/lib/alertify.min.js"></script>
+    <!--angular animate-->
+    <script type="text/javascript" src="components/angular-animate/angular-animate.min.js"></script>
+    <!--angular toastr-->
+    <script type="text/javascript" src="components/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+    <!--text angular-->
+    <script type="text/javascript" src="components/textAngular/dist/textAngular-rangy.min.js"></script>
+    <script type="text/javascript" src="components/textAngular/dist/textAngular-sanitize.js"></script>
+    <script type="text/javascript" src="components/textAngular/dist/textAngular.min.js"></script>
+    <!--angular flow-->
+    <script type="text/javascript" src="components/ng-flow/dist/ng-flow-standalone.min.js"></script>
+    <!--angular dialog-->
+    <script type="text/javascript" src="components/ng-dialog/js/ngDialog.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="js/dashboard.min.js"></script>
+
+    <script type="text/javascript" src="js/module.js"></script>
+    <script type="text/javascript" src="js/routes.js"></script>
+
+    <!--controllers-->
+    <script type="text/javascript" src="js/controllers/alert-ctrl.js"></script>
+    <script type="text/javascript" src="js/controllers/master-ctrl.js"></script>
+    <script type="text/javascript" src="js/controllers/categoryCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/supplierCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/productCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/loginCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/feedbackCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/orderCtrl.js"></script>
+
+    <!--shared controllers-->
+    <script type="text/javascript" src="js/controllers/shared/sidebarCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/shared/headerBarCtrl.js"></script>
+
+    <!--modal controllers-->
+    <!--category modal-->
+    <script type="text/javascript" src="js/controllers/modal/categoryModalCtrl/addCateModalCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/modal/categoryModalCtrl/categoryCrudModalCtrl.js"></script>
+    <!--supplier modal-->
+    <script type="text/javascript" src="js/controllers/modal/supplierModalCtrl/addSupModalCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/modal/supplierModalCtrl/supplierCrudModalCtrl.js"></script>
+    <!--product-->
+    <script type="text/javascript" src="js/controllers/modal/productModalCtrl/addProdModalCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/modal/productModalCtrl/productCrudModalCtrl.js"></script>
+    <!--feedback modal-->
+    <script type="text/javascript" src="js/controllers/modal/feedbackModalCtrl/feedbackCrudModalCtrl.js"></script>
+    <!--order modal-->
+    <script type="text/javascript" src="js/controllers/modal/orderModalCtrl/orderCrudModalCtrl.js"></script>
+
+    <!--services-->
+    <script type="text/javascript" src="js/services/categoryService.js"></script>
+    <script type="text/javascript" src="js/services/supplierService.js"></script>
+    <script type="text/javascript" src="js/services/productService.js"></script>
+    <script type="text/javascript" src="js/services/loginService.js"></script>
+    <script type="text/javascript" src="js/services/feedbackService.js"></script>
+    <script type="text/javascript" src="js/services/orderService.js"></script>
+
+    <!--directives-->
+    <script type="text/javascript" src="js/directives/loading.js"></script>
+    <script type="text/javascript" src="js/directives/widget-body.js"></script>
+    <script type="text/javascript" src="js/directives/widget-footer.js"></script>
+    <script type="text/javascript" src="js/directives/widget-header.js"></script>
+    <script type="text/javascript" src="js/directives/widget.js"></script>
+
+</head>
+<body ng-controller="MasterCtrl">
+    <!--Page Wrapper-->
+    <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+
+        <!-- Sidebar -->
+        <div ng-controller="sidebarCtrl" ng-include="'templates/shared/_sidebar.html'"></div>
+        <!-- End Sidebar -->
+
+        <div id="content-wrapper">
+            <div class="page-content">
+
+                <!-- Header Bar -->
+                <div ng-controller="headerBarCtrl" ng-include="'templates/shared/_headerBar.html'"></div>
+                <!-- End Header Bar -->
+
+                <!-- Main Content -->
+                <div ui-view></div>
+
+            </div>
+            <!-- End Page Content -->
+        </div>
+        <!-- End Content Wrapper -->
+
+    </div>
+    <!-- End Page Wrapper -->
+</body>
+</html>
